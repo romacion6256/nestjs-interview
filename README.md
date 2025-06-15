@@ -38,12 +38,38 @@ $ npm run test:cov
 
 Check integration tests at: (https://github.com/crunchloop/interview-tests)
 
-## Contact
+# ============================================================================================================
 
-- Martín Fernández (mfernandez@crunchloop.io)
+# Pasos a realizar para poder hacer uso de los endpoints REST agregados y hacer uso de ellos a través de un cliente MCP (Claude Desktop)
 
-## About Crunchloop
+1) Luego de clonar el repositorio, instalar las dependencias: *npm install*.
 
-![crunchloop](https://s3.amazonaws.com/crunchloop.io/logo-blue.png)
+2) *Importante*. Asegurarse de ejecutar *npm run build* para la compilación del servidor (sin este paso no se podrá hacer uso de la herramienta MCP).
 
-We strongly believe in giving back :rocket:. Let's work together [`Get in touch`](https://crunchloop.io/#contact).
+3) Se asume que se tiene Claude Desktop (cliente MCP para este caso). De no ser así, se puede instalar aquí: https://claude.ai/download
+
+4) Una vez dentro de Claude Desktop (esta explicación es para windows, para mac o algún otro SO podría ser diferente) seguir la siguente ruta para acceder al archivo de configuración (claude_desktop_config):
+
+```bash
+# Tres barritas(superior izquierda)>Archivo>Configuración>Desarrollador>Editar configuración 
+# (Atajo: Ctrl+coma>Desarrollador>Editar configuración)
+```
+
+Estas rutas llevan a la ubicación del archivo de configuración.
+
+5) Abrir este archivo en un editor de texto y colocar lo siguiente:
+```bash
+{
+  "mcpServers": {
+    "nestjs-todolist-server": {
+      "command": "node",
+      "args": ["ruta/al/archivo/dist/mcp/src/mcp-server.js"] # ruta al servidor luego de la compilación
+    }
+  }
+}
+```
+6) Guardar los cambios y reiniciar Claude Desktop. En la próxima apertura de Claude, este leerá automaticamente el archivo y sabrá que existe un servidor con ese nombre, en esa ruta y además sabrá como ejecutarlo.
+
+7) Por último, para poder usar los endpoints REST a través de Claude, correr la app con *npm run start*.
+
+8) Una vez la app este corriendo, Claude ya estará pronto para poder realizar llamada a la API en base a lo que le pidas en lenguaje natural.
