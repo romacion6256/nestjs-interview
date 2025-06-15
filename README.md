@@ -38,7 +38,7 @@ $ npm run test:cov
 
 Check integration tests at: (https://github.com/crunchloop/interview-tests)
 
-# ============================================================================================================
+# =====================================
 
 # Pasos a realizar para poder hacer uso de los endpoints REST agregados y hacer uso de ellos a través de un cliente MCP (Claude Desktop)
 
