@@ -40,7 +40,7 @@ Check integration tests at: (https://github.com/crunchloop/interview-tests)
 
 # =====================================
 
-# Pasos a realizar para poder hacer uso de los endpoints REST agregados y hacer uso de ellos a través de un cliente MCP (Claude Desktop)
+# Pasos a realizar para probar los endpoints REST agregados y hacer uso de ellos a través de un cliente MCP (Claude Desktop)
 
 1) Luego de clonar el repositorio, instalar las dependencias: *npm install*.
 
